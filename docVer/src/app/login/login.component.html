@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="col-sm-8">
+    <fieldset><legend><h2>Login</h2></legend>
+    <form class="form-horizontal" #loginForm = "ngForm" (ngSubmit) = login(loginForm)>
+      <div class="form-group">
+        <label class="control-label col-sm-4">Department Name:</label>
+        <div class="col-sm-5">
+          <select class="form-control" name = "loginFormDep" ngModel>
+         <option value="docVer" >DocVer</option>
+        </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-4">Office ID:</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name = "loginFormId" ngModel>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-5">
+          <label id="lbl">Key</label>
+          <input type='file' (change)="fileChanged($event)">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-5">
+          <button type="submit" class="btn btn-success">Login</button>
+        </div>
+        <a [routerLink]="['/register']">Click here to register</a>
+      </div>
+    </form>
+    </fieldset>
+    </div>
+  </div>
